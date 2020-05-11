@@ -12,9 +12,11 @@ public final class Const {
 	
 	public enum TimeRange {
 		Hour,
+		Hour_12,
 		Day,
+		Day_3,
 		Week,
-		Week2,
+		Week_2,
 		Month,
 		Quarter,
 		Year,
@@ -24,11 +26,15 @@ public final class Const {
 			switch (this) {
 			case Hour:
 				return 60 * 60;
+			case Hour_12:
+				return Hour.getSeconds() * 12;
 			case Day:
 				return Hour.getSeconds() * 24;
+			case Day_3:
+				return Day.getSeconds() * 3;
 			case Week:
 				return Day.getSeconds() * 7;
-			case Week2:
+			case Week_2:
 				return Week.getSeconds() * 2;
 			case Month:
 				return Day.getSeconds() * 30;

@@ -36,6 +36,7 @@
 	<select id="graphs" size="1">
 		<option value="weather">Weather</option>
 		<option value="gas">Gas</option>
+		<option value="heating">Heating</option>
 	</select>
 	<select id="range" size="1">
 	<%
