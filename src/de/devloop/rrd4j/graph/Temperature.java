@@ -29,6 +29,8 @@ public class Temperature extends AGraph {
 		addArea("gas", RRDFiles.C_BOILER_GAS_COUNT, Color.ORANGE, "Gas (*" + Const.GAS_IMPULSE + " m³)");
 		addLine("weather_temp", RRDFiles.WEATHER_NOW_TEMP, Color.GREEN, "Temperatur (°C)");
 
+		addLine("humidity_rain", RRDFiles.C_HUMIDITY_RAIN, Color.CYAN, "Rain Sensor");
+		
 		graphDef.datasource("weather_winddir", RRDFiles.WEATHER_NOW_WINDDIRECTION.getFilePath(rrdPath), "state", ConsolFun.AVERAGE);
 		graphDef.datasource("winddir_min", "weather_winddir," + NORMALIZE_WIND_DIR + ",/");
 		graphDef.line("winddir_min", Color.BLACK, "Windrichtung (*" + NORMALIZE_WIND_DIR + " °)", 2);
