@@ -13,6 +13,7 @@ import de.devloop.rrd4j.Const.RRDFiles;
 public class Temperature extends AGraph {
 
 	private final static int NORMALIZE_WIND_DIR = 10;
+	private final static int NORMALIZE_HUMIDITY_RAIN = 20;
 
 	public Temperature() {
 		super();
@@ -29,7 +30,9 @@ public class Temperature extends AGraph {
 		addArea("gas", RRDFiles.C_BOILER_GAS_COUNT, Color.ORANGE, "Gas (*" + Const.GAS_IMPULSE + " m³)");
 		addLine("weather_temp", RRDFiles.WEATHER_NOW_TEMP, Color.GREEN, "Temperatur (°C)");
 
-		addLine("humidity_rain", RRDFiles.C_HUMIDITY_RAIN, Color.CYAN, "Rain Sensor");
+		graphDef.datasource("humidity_rain", RRDFiles.C_HUMIDITY_RAIN.getFilePath(rrdPath), "state", ConsolFun.AVERAGE);
+		graphDef.datasource("humidity_rain_min", "humidity_rain," + NORMALIZE_HUMIDITY_RAIN + ",/");
+		graphDef.line("humidity_rain_min", Color.CYAN, "Regensensor (*" + NORMALIZE_HUMIDITY_RAIN + ")", 2);
 		
 		graphDef.datasource("weather_winddir", RRDFiles.WEATHER_NOW_WINDDIRECTION.getFilePath(rrdPath), "state", ConsolFun.AVERAGE);
 		graphDef.datasource("winddir_min", "weather_winddir," + NORMALIZE_WIND_DIR + ",/");
