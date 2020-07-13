@@ -37,6 +37,7 @@
 		<option value="weather">Weather</option>
 		<option value="gas">Gas</option>
 		<option value="heating">Heating</option>
+		<option value="outdoor">Outdoor</option>
 	</select>
 	<select id="range" size="1">
 	<%

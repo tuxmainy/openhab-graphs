@@ -102,7 +102,9 @@ public final class Const {
 		WEATHER_NOW_TEMP("Weather_Now_Temp.rrd"),
 		WEATHER_NOW_WIND("Weather_Now_Wind.rrd"),
 		WEATHER_NOW_WINDDIRECTION("Weather_Now_WindDirection.rrd"),
-		C_HUMIDITY_RAIN("C_Humidity_Rain.rrd");
+		C_HUMIDITY_RAIN("C_Humidity_Rain.rrd"),
+		C_TEMP_OUTDOOR("C_Temp_Outdoor.rrd"),
+		C_TEMP_GREENHOUSE("C_Temp_GreenHouse.rrd");
 
 		private String filename;
 		
